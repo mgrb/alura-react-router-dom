@@ -15,8 +15,8 @@ function AppRoutes() {
         <Route path="/" element={<PaginaPadrao />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="posts/:id" element={<Post />} />
         </Route>
+        <Route path="posts/:id" element={<Post />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Rodape />
