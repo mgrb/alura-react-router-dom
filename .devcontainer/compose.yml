@@ -1,0 +1,7 @@
+services:
+  hatstall-webapp-dev-env:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/webapp:cached

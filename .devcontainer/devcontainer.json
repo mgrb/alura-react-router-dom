@@ -1,0 +1,15 @@
+{
+    "name": "Hatstall - webapp",
+    "dockerComposeFile": "compose.yml",
+    "service": "hatstall-webapp-dev-env",
+    "workspaceFolder": "/webapp",
+    "remoteUser": "node",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode"
+            ]
+        }
+    }
+}
