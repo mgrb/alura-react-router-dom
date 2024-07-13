@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Post.module.css";
+import BotaoPrincipal from "@/components/BotaoPrincial";
 const PostCard = ({ id, titulo }) => {
   return (
     <Link to={`/posts/${id}`}>
@@ -10,7 +11,7 @@ const PostCard = ({ id, titulo }) => {
           alt="Imagem de capa do post"
         />
         <h2 className={styles.titulo}>{titulo}</h2>
-        <button className={styles.botaoLer}>Ler</button>
+        <BotaoPrincipal>Ler</BotaoPrincipal>
       </div>
     </Link>
   );
