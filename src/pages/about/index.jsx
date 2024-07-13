@@ -1,9 +1,11 @@
+import Banner from "@/components/Banner";
+
 const About = () => {
   return (
-    <div>
+    <main>
+      <Banner />
       <h1>About</h1>
-      <p>This is the about page</p>
-    </div>
+    </main>
   );
 };
 
