@@ -7,6 +7,11 @@ import "./Post.css";
 const Post = () => {
   const { id } = useParams();
   const post = posts.find((post) => post.id === Number(id));
+
+  if (!post) {
+    return <h1>Post não encontrado</h1>;
+  }
+
   return (
     <PostModelo
       fotoCapa={`/assets/posts/${post.id}/capa.png`}

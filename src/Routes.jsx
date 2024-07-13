@@ -1,10 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "@/pages/Home";
-import About from "@/pages/About";
 import Menu from "@/components/Menu";
-import Rodape from "@/components/Rodape";
 import PaginaPadrao from "@/components/PaginaPadrao";
+import Rodape from "@/components/Rodape";
+import About from "@/pages/About";
+import Home from "@/pages/Home";
+import NotFound from "@/pages/NotFound";
 import Post from "@/pages/Post";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function AppRoutes() {
   return (
@@ -16,7 +17,7 @@ function AppRoutes() {
           <Route path="about" element={<About />} />
           <Route path="posts/:id" element={<Post />} />
         </Route>
-        <Route path="*" element={<div>404 - Not Found!</div>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Rodape />
     </BrowserRouter>
