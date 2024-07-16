@@ -6,10 +6,12 @@ import Home from "@/pages/Home";
 import NotFound from "@/pages/NotFound";
 import Post from "@/pages/Post";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 
 function AppRoutes() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Menu />
       <Routes>
         <Route path="/" element={<PaginaPadrao />}>

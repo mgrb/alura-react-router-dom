@@ -1,12 +1,11 @@
-import { useParams } from "react-router-dom";
-import posts from "@/json/posts.json";
-import PostModelo from "@/components/PostModelo";
-import ReactMarkdown from "react-markdown";
-import "./Post.css";
-import NotFound from "../NotFound";
-import { Routes } from "react-router-dom";
-import { Route } from "react-router-dom";
 import PaginaPadrao from "@/components/PaginaPadrao";
+import PostModelo from "@/components/PostModelo";
+import posts from "@/json/posts.json";
+import ReactMarkdown from "react-markdown";
+import { useParams } from "react-router-dom";
+import NotFound from "../NotFound";
+import "./Post.css";
+import PostRecomendado from "@/components/PostRecomendado";
 
 const Post = () => {
   const { id } = useParams();
@@ -15,6 +14,12 @@ const Post = () => {
   if (!post) {
     return <NotFound />;
   }
+
+  // Filtrando os posts relacionados
+  const postsRecomendados = posts
+    .filter((postRelacionado) => postRelacionado.id !== Number(id))
+    .sort((a, b) => b.id - a.id)
+    .slice(0, 4);
 
   return (
     <PaginaPadrao>
@@ -27,6 +32,7 @@ const Post = () => {
           <ReactMarkdown>{post.texto}</ReactMarkdown>
         </div>
       </PostModelo>
+      <PostRecomendado postsRecomendados={postsRecomendados} />
     </PaginaPadrao>
   );
 };
